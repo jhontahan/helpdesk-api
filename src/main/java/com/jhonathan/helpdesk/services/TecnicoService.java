@@ -1,5 +1,6 @@
 package com.jhonathan.helpdesk.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,10 @@ public class TecnicoService {
 //		}
 //		
 //		return tecnico.get();
+	}
+
+	public List<Tecnico> findAll(Object object) {
+		return repository.findAll();
 	}
 	
 }
