@@ -37,6 +37,7 @@ public class TecnicoDTO implements Serializable{
 		this.dataCriacao = obj.getDataCriacao();
 		addPerfil(Perfil.CLIENTE);
 	}
+	
 	public Integer getId() {
 		return id;
 	}
