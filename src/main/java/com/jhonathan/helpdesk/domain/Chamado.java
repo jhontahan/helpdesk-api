@@ -22,7 +22,7 @@ public class Chamado implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer Id;
+	private Integer id;
 	
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataAbertura = LocalDate.now();
@@ -53,7 +53,7 @@ public class Chamado implements Serializable{
 	public Chamado(Integer id, Prioridade prioridade, Status status, String titulo, String observacoes, Tecnico tecnico,
 			Cliente cliente) {
 		super();
-		Id = id;
+		this.id = id;
 		this.prioridade = prioridade;
 		this.status = status;
 		this.titulo = titulo;
@@ -63,10 +63,10 @@ public class Chamado implements Serializable{
 	}
 
 	public Integer getId() {
-		return Id;
+		return id;
 	}
 	public void setId(Integer id) {
-		Id = id;
+		this.id = id;
 	}
 	public LocalDate getDataAbertura() {
 		return dataAbertura;
@@ -118,7 +118,7 @@ public class Chamado implements Serializable{
 	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(Id);
+		return Objects.hash(id);
 	}
 
 	@Override
@@ -130,7 +130,7 @@ public class Chamado implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Chamado other = (Chamado) obj;
-		return Objects.equals(Id, other.Id);
+		return Objects.equals(id, other.id);
 	}
 	
 }
