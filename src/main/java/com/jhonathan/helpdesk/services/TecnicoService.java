@@ -1,5 +1,6 @@
 package com.jhonathan.helpdesk.services;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -44,6 +45,9 @@ public class TecnicoService {
 	public Tecnico create(TecnicoDTO objDTO) {
 		objDTO.setId(null);
 		objDTO.setSenha(encoder.encode(objDTO.getSenha()));
+		if(objDTO.getDataCriacao() == null) {
+			objDTO.setDataCriacao(LocalDate.now());
+		}
 		validaPorCpfEEmail(objDTO);
 		Tecnico obj = new Tecnico(objDTO);
 		return repository.save(obj);
